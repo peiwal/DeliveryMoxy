@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Хочу Есть Халяль</string>
+    <string name="error_load_data">Ошибка загрузки данных</string>
+    <string name="error_unknown">Произошла непредвиденная ошибка</string>
+
+    <string name="title_home">Меню</string>
+    <string name="title_contacts">Контакты</string>
+    <string name="title_basket">Корзина</string>
+
+    <string name="btn_ok">Ок</string>
+
+    <string name="btn_price_fixed_text">%s ₽</string>
+    <string name="btn_price_text">от %s ₽</string>
+
+    <string name="product_info_add_basket">В корзину за %s ₽</string>
+    <string name="product_info_succes_add">Добавлено в корзину</string>
+
+    <string name="basket_adapter_item_minus">-</string>
+    <string name="basket_adapter_item_plus">+</string>
+    <string name="basket_create_order">Оформить за %s ₽</string>
+    <string name="order_created">Заказ успешно создан</string>
+    <string name="basket_is_empty">Ой! Корзина пуста. Перейдите в меню для набора заказа</string>
+    <string name="open_product_menu">Перейти в меню</string>
+</resources>

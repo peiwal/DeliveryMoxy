@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_small"
+            android:src="@drawable/ic_arrow_left"
+            android:backgroundTint="@android:color/white"
+            app:borderWidth="0dp"
+            app:fabSize="mini"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/spacing_small"
+            android:src="@drawable/ic_basket"
+            android:backgroundTint="@android:color/white"
+            app:borderWidth="0dp"
+            app:fabSize="mini"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.fragment.delivery.ProductInfoActivity">
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintWidth_max="300dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintDimensionRatio="H,1:1"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@tools:sample/avatars[0]" />
+
+                <TextView
+                        android:id="@+id/tvName"
+                        style="@style/TexTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:layout_marginBottom="@dimen/spacing_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        tools:text="King бургер" />
+
+                <TextView
+                        android:id="@+id/tvDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName"
+                        style="@style/TextBody"
+                        tools:text="Сочный бургер, приготовленный на огне"/>
+
+                <TextView
+                        android:id="@+id/tvIngredients"
+                        style="@style/TextSecondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                        tools:text="Тесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соусТесто, говядина, помидор, соленый огурец, сырный соус" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button android:id="@+id/btnAddToBasket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_normal"
+                style="@style/Button"
+                tools:text="@string/product_info_add_basket"/>
+    </LinearLayout>
+</RelativeLayout>

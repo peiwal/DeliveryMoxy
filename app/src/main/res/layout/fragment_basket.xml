@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:minHeight="?attr/actionBarSize"
+                        android:elevation="4dp"
+                        android:theme="?attr/actionBarTheme" >
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:textStyle="bold"
+                                android:text="@string/title_basket"/>
+                </androidx.appcompat.widget.Toolbar>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                <Button
+                        android:id="@+id/btnCreateOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Button"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:layout_marginStart="@dimen/spacing_normal"
+                        android:layout_marginEnd="@dimen/spacing_normal"
+                        android:layout_marginBottom="@dimen/spacing_normal"
+                        tools:text="@string/basket_create_order" />
+        </LinearLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlBasketEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:gravity="center"
+                android:background="@android:color/white"
+                tools:visibility="visible">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/ic_pizza"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="@dimen/spacing_normal"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:gravity="center_horizontal"
+                                android:textColor="@android:color/black"
+                                android:text="@string/basket_is_empty"/>
+
+                        <Button
+                                android:id="@+id/btnOpenProductMenu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Button"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:layout_marginTop="@dimen/spacing_normal"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/open_product_menu"/>
+                </LinearLayout>
+
+        </RelativeLayout>
+</FrameLayout>
