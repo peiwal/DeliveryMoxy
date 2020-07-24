@@ -13,6 +13,6 @@ interface BasketView : MvpView {
     fun isEmptyBasket(isEmpty: Boolean)
     fun orderCreated()
     @StateStrategyType(OneExecutionStateStrategy::class)
-    fun showError(message: String?)
+    fun showError(errorCode: Int)
     fun updateFullCost(cost: BigDecimal)
 }

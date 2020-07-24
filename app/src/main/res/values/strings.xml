@@ -18,6 +18,7 @@
     <string name="basket_adapter_item_minus">-</string>
     <string name="basket_adapter_item_plus">+</string>
     <string name="basket_create_order">Оформить за %s ₽</string>
+    <string name="basket_error_create_order">Ошибка создания заказа</string>
     <string name="order_created">Заказ успешно создан</string>
     <string name="basket_is_empty">Ой! Корзина пуста. Перейдите в меню для набора заказа</string>
     <string name="open_product_menu">Перейти в меню</string>

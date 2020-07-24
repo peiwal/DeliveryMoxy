@@ -42,7 +42,9 @@ class ProductInfoActivity : BaseActivity(), ProductInfoView {
 
         intent.extras?.let {
             if (it.containsKey(PARAM_PRODUCT)) {
-                product = getProductAdapter().fromJson(it.getString(PARAM_PRODUCT))!!
+                it.getString(PARAM_PRODUCT)?.let {
+                    product = getProductAdapter().fromJson(it)!!
+                }
             }
         }
 
@@ -83,8 +85,8 @@ class ProductInfoActivity : BaseActivity(), ProductInfoView {
         Snackbar.make(btnAddToBasket, getString(R.string.product_info_succes_add), Snackbar.LENGTH_LONG).show()
     }
 
-    override fun showError(message: String?) {
-        Snackbar.make(btnAddToBasket, message ?: getString(R.string.error_unknown), Snackbar.LENGTH_LONG).show()
+    override fun showError(errorCode: Int) {
+        Snackbar.make(btnAddToBasket, getString(errorCode), Snackbar.LENGTH_LONG).show()
     }
 
     companion object {

@@ -80,8 +80,8 @@ class BasketFragment : BaseFragment(), BasketView {
         btnCreateOrder.text = String.format(getString(R.string.basket_create_order), cost)
     }
 
-    override fun showError(message: String?) {
-        Snackbar.make(recyclerView, message ?: getString(R.string.error_unknown), Snackbar.LENGTH_LONG).show()
+    override fun showError(errorCode: Int) {
+        Snackbar.make(recyclerView, getString(errorCode), Snackbar.LENGTH_LONG).show()
     }
 
     override fun orderCreated() {

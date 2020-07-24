@@ -9,5 +9,5 @@ import petrov.ivan.deliverymobile.data.Product
 interface ProductInfoView : MvpView {
     fun showProduct(product: Product)
     fun succesAddToBusket()
-    fun showError(message: String?)
+    fun showError(errorCode: Int)
 }

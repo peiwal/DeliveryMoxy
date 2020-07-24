@@ -9,6 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import petrov.ivan.deliverymobile.Basket
+import petrov.ivan.deliverymobile.R
 import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.data.ProductInBasket
 import petrov.ivan.deliverymobile.presentation.view.delivery.BasketView
@@ -36,7 +37,7 @@ class BasketPresenter(val basket: Basket) : MvpPresenter<BasketView>(), IAdapter
                     }
                 },
                 { error ->
-                    viewState.showError(null)
+                    viewState.showError(R.string.error_load_data)
                 })
         compositeDisposable.add(disposable)
     }
@@ -58,7 +59,7 @@ class BasketPresenter(val basket: Basket) : MvpPresenter<BasketView>(), IAdapter
             }
             override fun onComplete() {}
             override fun onError(e: Throwable) {
-                viewState.showError(null)
+                viewState.showError(R.string.error_unknown)
             }
         })
     }
@@ -79,7 +80,7 @@ class BasketPresenter(val basket: Basket) : MvpPresenter<BasketView>(), IAdapter
             }
             override fun onComplete() {}
             override fun onError(e: Throwable) {
-                viewState.showError(null)
+                viewState.showError(R.string.error_unknown)
             }
         })
     }
@@ -100,7 +101,7 @@ class BasketPresenter(val basket: Basket) : MvpPresenter<BasketView>(), IAdapter
             }
 
             override fun onError(e: Throwable) {
-                viewState.showError(null)
+                viewState.showError(R.string.basket_error_create_order)
             }
         })
     }

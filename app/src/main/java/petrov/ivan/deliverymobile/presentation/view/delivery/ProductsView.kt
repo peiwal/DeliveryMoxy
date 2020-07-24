@@ -10,7 +10,7 @@ import petrov.ivan.deliverymobile.data.Product
 @StateStrategyType(OneExecutionStateStrategy::class)
 interface ProductsView : MvpView {
 
-    fun showError(message: String?)
+    fun showError(errorCode: Int)
 
     fun showCategoryes(categoryes: List<CategoryWithProductList>)
 

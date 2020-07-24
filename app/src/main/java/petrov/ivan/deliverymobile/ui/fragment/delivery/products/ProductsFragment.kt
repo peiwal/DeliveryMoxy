@@ -14,7 +14,7 @@ import petrov.ivan.deliverymobile.data.CategoryWithProductList
 import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.presentation.presenter.delivery.ProductsPresenter
 import petrov.ivan.deliverymobile.presentation.view.delivery.ProductsView
-import petrov.ivan.deliverymobile.service.RestApi
+import petrov.ivan.deliverymobile.service.IMobileClientApiRX
 import petrov.ivan.deliverymobile.ui.MainActivity.Companion.PRODUCT_INFO_REQUEST_CODE
 import petrov.ivan.deliverymobile.ui.adapters.CenterLayoutManager
 import petrov.ivan.deliverymobile.ui.adapters.ProductCategoryAdapter
@@ -27,7 +27,7 @@ import petrov.ivan.deliverymobile.ui.fragment.delivery.products.features.Fragmen
 import javax.inject.Inject
 
 class ProductsFragment : BaseFragment(), ProductsView {
-    private val deliveryService: RestApi by lazy(mode = LazyThreadSafetyMode.NONE) {
+    private val deliveryService: IMobileClientApiRX by lazy(mode = LazyThreadSafetyMode.NONE) {
         deliveryComponents.getDeliveryService()
     }
 
@@ -77,8 +77,8 @@ class ProductsFragment : BaseFragment(), ProductsView {
         adapterProduct.items = products  ?: ArrayList()
     }
 
-    override fun showError(message: String?) {
-        Snackbar.make(recyclerView, message ?: getString(R.string.error_load_data), Snackbar.LENGTH_LONG).show()
+    override fun showError(errorCode: Int) {
+        Snackbar.make(recyclerView, getString(errorCode), Snackbar.LENGTH_LONG).show()
     }
 
     override fun showRefresh(isRefreshing: Boolean) {

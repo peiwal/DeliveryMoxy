@@ -9,6 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import petrov.ivan.deliverymobile.Basket
+import petrov.ivan.deliverymobile.R
 import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.presentation.view.delivery.ProductInfoView
 
@@ -35,7 +36,7 @@ class ProductInfoPresenter(val basket: Basket) : MvpPresenter<ProductInfoView>()
                 }
 
                 override fun onError(e: Throwable) {
-                    viewState.showError(null)
+                    viewState.showError(R.string.error_unknown)
                 }
             })
     }

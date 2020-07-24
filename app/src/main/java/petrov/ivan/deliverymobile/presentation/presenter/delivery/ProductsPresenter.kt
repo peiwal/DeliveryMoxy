@@ -2,24 +2,26 @@ package petrov.ivan.deliverymobile.presentation.presenter.delivery
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import petrov.ivan.deliverymobile.AppConstants.CONNECTION_TIMEOUT_SEC
+import petrov.ivan.deliverymobile.R
 import petrov.ivan.deliverymobile.data.CategoryWithProductList
 import petrov.ivan.deliverymobile.data.ParamRespProduct
 import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.presentation.view.delivery.ProductsView
-import petrov.ivan.deliverymobile.service.RestApi
+import petrov.ivan.deliverymobile.service.IMobileClientApiRX
 import petrov.ivan.deliverymobile.ui.adapters.IAdapterCategory
 import petrov.ivan.deliverymobile.ui.adapters.IAdapterProduct
 import java.math.BigDecimal
 import java.util.concurrent.TimeUnit
 
 @InjectViewState
-class ProductsPresenter(val restApi: RestApi) : MvpPresenter<ProductsView>(), IAdapterCategory, IAdapterProduct {
+class ProductsPresenter(val restApi: IMobileClientApiRX) : MvpPresenter<ProductsView>(), IAdapterCategory, IAdapterProduct {
     private val compositeDisposable = CompositeDisposable()
     private var idxChoosedCategory: Int? = null
         set(value) {
@@ -43,37 +45,10 @@ class ProductsPresenter(val restApi: RestApi) : MvpPresenter<ProductsView>(), IA
         viewState.showRefresh(true)
         viewState.showProducts(null)
 
-        // output on Model
-        val request2 = Single.just(
-            ParamRespProduct(
-                listOf(
-                    CategoryWithProductList(1, "Роллы",
-                        listOf(Product(1, "Пицца", "Четыре сыра", "Тесто, сыр моцарела, сыр пармезан, сыр рикота, сыр фета",
-                        "https://i.imgur.com/J9osDN7.jpeg", BigDecimal(370))
-                                , Product(2, "King Бургер", "Сочный бургер, приготовленный на огне", "Тесто, говядина, помидор, соленый огурец, сырный соус",
-                            "https://i.imgur.com/Oo543iV.jpeg", BigDecimal(180)),
-                            Product(3, "Пицца3", "Четыре сыра", "Тесто, сыр моцарела, сыр пармезан, сыр рикота, сыр фета",
-                                "https://i.imgur.com/J9osDN7.jpeg", BigDecimal(370))
-                            , Product(4, "King Бургер4", "Сочный бургер, приготовленный на огне", "Тесто, говядина, помидор, соленый огурец, сырный соус",
-                                "https://i.imgur.com/Oo543iV.jpeg", BigDecimal(180)),
-                            Product(5, "Пицца5", "Четыре сыра", "Тесто, сыр моцарела, сыр пармезан, сыр рикота, сыр фета",
-                                "https://i.imgur.com/J9osDN7.jpeg", BigDecimal(370))
-                            , Product(6, "King Бургер6", "Сочный бургер, приготовленный на огне", "Тесто, говядина, помидор, соленый огурец, сырный соус",
-                                "https://i.imgur.com/Oo543iV.jpeg", BigDecimal(180))
-                        )
-                    ),
-                    CategoryWithProductList(2, "Пицца",
-                        listOf(Product(3, "Шаурма", "Вкуснейшая куриная шаурма", "Курица, морковь, капуста, лук, перец",
-                        "https://i.imgur.com/J9osDN7.jpeg", BigDecimal(140))
-                        )
-                    )
-                )
-            )
-        )
-
         // todo rest
-//        val request= restApi.getProducts(application.getString(R.string.response_language))
-        val disposable = request2.subscribeOn(Schedulers.newThread())
+        val request= restApi.getProducts()
+        val disposable = request
+            .subscribeOn(Schedulers.newThread())
             .timeout(CONNECTION_TIMEOUT_SEC, TimeUnit.SECONDS)
             .delay(1, TimeUnit.SECONDS)
             .observeOn(AndroidSchedulers.mainThread())
@@ -92,7 +67,7 @@ class ProductsPresenter(val restApi: RestApi) : MvpPresenter<ProductsView>(), IA
                 },
                 { error ->
                     viewState.showRefresh(false)
-                    viewState.showError(null)
+                    viewState.showError(R.string.error_load_data)
                 })
         compositeDisposable.add(disposable)
     }
