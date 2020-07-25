@@ -9,9 +9,9 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_products.*
+import petrov.delivery.webapi.CategoryWithProductList
+import petrov.delivery.webapi.Product
 import petrov.ivan.deliverymobile.R
-import petrov.ivan.deliverymobile.data.CategoryWithProductList
-import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.presentation.presenter.delivery.ProductsPresenter
 import petrov.ivan.deliverymobile.presentation.view.delivery.ProductsView
 import petrov.ivan.deliverymobile.service.IMobileClientApiRX

@@ -33,7 +33,9 @@ class DeliveryModule {
         return JacksonConverterFactory.create(objectMapper())
     }
 
-    private fun objectMapper(): ObjectMapper {
+    @ApplicationScope
+    @Provides
+    fun objectMapper(): ObjectMapper {
         return ObjectMapper().registerKotlinModule()
     }
 

@@ -13,9 +13,9 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import kotlinx.android.synthetic.main.activity_product_info.*
+import petrov.delivery.webapi.Product
 import petrov.ivan.deliverymobile.Basket
 import petrov.ivan.deliverymobile.R
-import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.presentation.presenter.delivery.ProductInfoPresenter
 import petrov.ivan.deliverymobile.presentation.view.delivery.ProductInfoView
 import petrov.ivan.deliverymobile.ui.MainActivity.Companion.PRODUCT_RESULT_OPEN_BASKET
@@ -93,6 +93,7 @@ class ProductInfoActivity : BaseActivity(), ProductInfoView {
         const val TAG = "ProductInfoActivity"
         const val PARAM_PRODUCT = "param_product"
 
+        // todo remove moshi
         fun getProductAdapter(): JsonAdapter<Product> {
             val moshi = Moshi.Builder()
                 .add(BigDecimalAdapter)

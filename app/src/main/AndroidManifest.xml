@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="petrov.ivan.deliverymobile">
-    <uses-permission android:name="android.permission.INTERNET"/>
+        package="petrov.ivan.deliverymobile">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
-            android:name="petrov.ivan.deliverymobile.application.ClientApplication"
+            android:name=".application.ClientApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
             android:theme="@style/AppTheme">
-        <activity android:name="petrov.ivan.deliverymobile.ui.MainActivity"
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/google_maps_key"/>
+
+        <activity
+                android:name=".ui.MainActivity"
                 android:launchMode="singleInstance">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.fragment.delivery.ProductInfoActivity"/>
+        <activity android:name=".ui.fragment.delivery.ProductInfoActivity" />
+        <activity android:name=".ui.activity.delivery.CompanyOnMapActivity" />
     </application>
 
 </manifest>

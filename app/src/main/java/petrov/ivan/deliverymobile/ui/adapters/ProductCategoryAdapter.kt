@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_product_category.view.*
+import petrov.delivery.webapi.CategoryWithProductList
 import petrov.ivan.deliverymobile.R
-import petrov.ivan.deliverymobile.data.CategoryWithProductList
 import java.util.*
 
 class ProductCategoryAdapter(private val presenter: IAdapterCategory) : RecyclerView.Adapter<ProductCategoryAdapter.ViewHolder>() {

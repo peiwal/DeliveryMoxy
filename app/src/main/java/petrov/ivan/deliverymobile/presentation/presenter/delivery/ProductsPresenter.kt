@@ -2,22 +2,18 @@ package petrov.ivan.deliverymobile.presentation.presenter.delivery
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import io.reactivex.Observable
-import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import petrov.delivery.webapi.ParamRespProduct
+import petrov.delivery.webapi.Product
 import petrov.ivan.deliverymobile.AppConstants.CONNECTION_TIMEOUT_SEC
 import petrov.ivan.deliverymobile.R
-import petrov.ivan.deliverymobile.data.CategoryWithProductList
-import petrov.ivan.deliverymobile.data.ParamRespProduct
-import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.presentation.view.delivery.ProductsView
 import petrov.ivan.deliverymobile.service.IMobileClientApiRX
 import petrov.ivan.deliverymobile.ui.adapters.IAdapterCategory
 import petrov.ivan.deliverymobile.ui.adapters.IAdapterProduct
-import java.math.BigDecimal
 import java.util.concurrent.TimeUnit
 
 @InjectViewState
@@ -45,7 +41,6 @@ class ProductsPresenter(val restApi: IMobileClientApiRX) : MvpPresenter<Products
         viewState.showRefresh(true)
         viewState.showProducts(null)
 
-        // todo rest
         val request= restApi.getProducts()
         val disposable = request
             .subscribeOn(Schedulers.newThread())

@@ -8,9 +8,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import petrov.delivery.webapi.Product
 import petrov.ivan.deliverymobile.Basket
 import petrov.ivan.deliverymobile.R
-import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.presentation.view.delivery.ProductInfoView
 
 @InjectViewState

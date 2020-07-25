@@ -1,53 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="@dimen/spacing_normal"
+        android:id="@+id/llContent"
+        android:visibility="gone"
+        tools:visibility="visible"
         tools:context=".ui.fragment.delivery.ContactsFragment">
 
-    <LinearLayout
+    <RelativeLayout
+            android:id="@+id/rlPlacesOnMap"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="?attr/selectableItemBackground">
-        <LinearLayout
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/background_circle_border">
+            android:layout_height="150dp">
 
-            <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:tint="@color/colorAccent"
-                    android:src="@drawable/ic_map_marker"/>
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_normal"
-                android:orientation="vertical">
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/TexTitleSmallAccent"
-                    android:text="г. Зеленодольск, ул Октябрьская 35а"/>
+                android:layout_height="match_parent"
+                android:tint="@color/secondary_text"
+                android:src="@drawable/ic_earth"/>
 
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/TextSecondary"
-                    android:layout_marginTop="4dp"
-                    android:text="Адрес компании"/>
-        </LinearLayout>
-
-    </LinearLayout>
+        <Button
+                android:id="@+id/btnShowOnMap"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:paddingStart="@dimen/spacing_small"
+                android:paddingEnd="@dimen/spacing_small"
+                android:text="@string/fragment_contacts_show_on_map"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                style="@style/Button"/>
+    </RelativeLayout>
 
     <LinearLayout
+            android:id="@+id/llPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -72,22 +61,24 @@
                 android:layout_marginStart="@dimen/spacing_normal"
                 android:orientation="vertical">
             <TextView
+                    android:id="@+id/tvPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/TexTitleSmallAccent"
-                    android:text="8 (84371) 7-00-77"/>
+                    tools:text="8 (84371) 7-00-77"/>
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/TextSecondary"
                     android:layout_marginTop="4dp"
-                    android:text="Закажите пиццу по телефону"/>
+                    android:text="@string/fragment_contacts_phone_hint"/>
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
+            android:id="@+id/llEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -112,17 +103,18 @@
                 android:layout_marginStart="@dimen/spacing_normal"
                 android:orientation="vertical">
             <TextView
+                    android:id="@+id/tvEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/TexTitleSmallAccent"
-                    android:text="feedback@hochu_halal.ru"/>
+                    tools:text="feedback@hochu_halal.ru"/>
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/TextSecondary"
                     android:layout_marginTop="4dp"
-                    android:text="Вопросы, отзывы и предложения по улучшению сервиса и качества"/>
+                    android:text="@string/fragment_contacts_email_hint"/>
         </LinearLayout>
 
     </LinearLayout>

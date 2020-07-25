@@ -2,7 +2,7 @@ package petrov.ivan.deliverymobile
 
 import android.content.Context
 import io.reactivex.Flowable
-import petrov.ivan.deliverymobile.data.Product
+import petrov.delivery.webapi.Product
 import petrov.ivan.deliverymobile.database.BasketDatabase
 import petrov.ivan.deliverymobile.database.ProductDB
 

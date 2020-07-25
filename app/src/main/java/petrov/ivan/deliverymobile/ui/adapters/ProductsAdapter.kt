@@ -13,8 +13,8 @@ import com.jakewharton.rxbinding3.view.clicks
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.item_product_adapter.view.*
+import petrov.delivery.webapi.Product
 import petrov.ivan.deliverymobile.R
-import petrov.ivan.deliverymobile.data.Product
 import petrov.ivan.deliverymobile.utils.toPx
 import java.util.concurrent.TimeUnit
 

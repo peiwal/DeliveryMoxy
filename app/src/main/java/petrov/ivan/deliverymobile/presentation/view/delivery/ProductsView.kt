@@ -4,8 +4,8 @@ import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
-import petrov.ivan.deliverymobile.data.CategoryWithProductList
-import petrov.ivan.deliverymobile.data.Product
+import petrov.delivery.webapi.CategoryWithProductList
+import petrov.delivery.webapi.Product
 
 @StateStrategyType(OneExecutionStateStrategy::class)
 interface ProductsView : MvpView {

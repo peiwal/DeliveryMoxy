@@ -2,6 +2,7 @@ package petrov.ivan.deliverymobile.components
 
 import android.content.Context
 import com.bumptech.glide.RequestManager
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.squareup.moshi.Moshi
 import dagger.Component
 import petrov.ivan.deliverymobile.Basket
@@ -19,4 +20,5 @@ interface DeliveryComponents {
     fun getBasket(): Basket
     fun getGlideRequestManager(): RequestManager
     fun getContext(): Context
+    fun getObectMapper(): ObjectMapper
 }

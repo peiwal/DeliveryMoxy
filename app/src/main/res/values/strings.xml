@@ -22,4 +22,8 @@
     <string name="order_created">Заказ успешно создан</string>
     <string name="basket_is_empty">Ой! Корзина пуста. Перейдите в меню для набора заказа</string>
     <string name="open_product_menu">Перейти в меню</string>
+
+    <string name="fragment_contacts_email_hint">Вопросы, отзывы и предложения по улучшению сервиса и качества</string>
+    <string name="fragment_contacts_phone_hint">Закажите пиццу по телефону</string>
+    <string name="fragment_contacts_show_on_map">Показать на карте</string>
 </resources>
