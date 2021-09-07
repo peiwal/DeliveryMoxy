@@ -21,4 +21,12 @@
             android:name="petrov.ivan.deliverymobile.ui.fragment.delivery.basket.BasketFragment"
             android:label="@string/title_basket"
             tools:layout="@layout/fragment_basket" />
+    <activity
+            android:id="@+id/fcmMessageActivity"
+            android:name="petrov.ivan.deliverymobile.ui.fragment.delivery.fcmmessage.FcmMessageActivity"
+            android:label="FcmMessageActivity" >
+        <argument
+                android:name="args"
+                app:argType="petrov.ivan.deliverymobile.ui.fragment.delivery.fcmmessage.ArgsFcmMessage" />
+    </activity>
 </navigation>

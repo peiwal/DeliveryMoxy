@@ -2,6 +2,7 @@ package petrov.ivan.deliverymobile.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -13,6 +14,7 @@ import petrov.ivan.deliverymobile.R
 import petrov.ivan.deliverymobile.presentation.presenter.delivery.MainActivityPresenter
 import petrov.ivan.deliverymobile.presentation.view.delivery.MainActivityView
 import petrov.ivan.deliverymobile.ui.base.BaseActivity
+import petrov.ivan.deliverymobile.ui.fragment.delivery.fcmmessage.FcmMessageActivity
 
 
 class MainActivity : BaseActivity(), MainActivityView {
@@ -34,6 +36,18 @@ class MainActivity : BaseActivity(), MainActivityView {
         val navController = findNavController(R.id.nav_host_fragment)
         nav_view.setupWithNavController(navController)
         presenter.observeBasketCount()
+
+        openFcmMessageActivityIfNeed()
+    }
+
+    private fun openFcmMessageActivityIfNeed() {
+        intent?.extras?.let { bundle ->
+            if (bundle.containsKey("google.message_id")) {
+                startActivity(Intent(this, FcmMessageActivity::class.java).apply {
+                    putExtras(bundle)
+                })
+            }
+        }
     }
 
     override fun updateBasketCount(count: Int) {

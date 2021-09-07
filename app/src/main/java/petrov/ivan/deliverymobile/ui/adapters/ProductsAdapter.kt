@@ -43,7 +43,7 @@ class ProductsAdapter(private val presenter: IAdapterProduct, private val reques
         holder.disposable = Observable.merge(holder.view.btnCost.clicks().map { item },
             holder.view.contentView.clicks().map { item }
         )
-            .throttleFirst(500, TimeUnit.MILLISECONDS)
+            .firstElement()
             .subscribe { product: Product ->
                 show(product)
             }.apply {
